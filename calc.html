@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <link rel="stylesheet" href="./estilo.css">
+ 
+  <script src="./script.js"></script>
+  
+  <title>Calculadora Javascript</title>
+
+</head>
+<body>
+  <div id="calculadora">
+    <div id="tela" class=" arredondado">
+      <p id="msg">Vamos Calcular?</p>
+      <p id="operando">Digite um número</p>
+      <p id="operação">Digite outro númeromero</p>
+      <p id="operador"></p>
+      <p id="resultado"></p>
+    </div>
+    
+    <div id="teclado">
+        <div class="botao">
+            <button class="numero arredondado" onClick="inputBtn(7);"  value="7">7</button>
+            <button class="numero arredondado" onClick="inputBtn(8);"  value="8">8</button>
+            <button class="numero arredondado" onClick="inputBtn(9);"  value="9">9</button>
+            <button class="numero arredondado" onClick="inputBtn('+');"  value="+">+</button><br>
+
+            <button class="numero arredondado" onClick="inputBtn(4);"  value="4">4</button>
+            <button class="numero arredondado" onClick="inputBtn(5);"  value="5">5</button>
+            <button class="numero arredondado" onClick="inputBtn(6);"  value="6">6</button>
+            <button class="numero arredondado" onClick="inputBtn('-');"  value="-">-</button><br>
+
+            <button class="numero arredondado" onClick="inputBtn(1);"  value="1">1</button>
+            <button class="numero arredondado" onClick="inputBtn(2);"  value="2">2</button>
+            <button class="numero arredondado" onClick="inputBtn(3);"  value="3">3</button>
+            <button class="numero arredondado" onClick="inputBtn('/');"  value="/">/</button><br>
+
+            <button class="numero arredondado" onClick="inputBtn('resst');" value="rst">reset</button>
+            <button class="numero arredondado" onClick="inputBtn(0);"  value="0">0</button>
+            <button class="numero arredondado" onClick="inputBtn('delete');" value="del">del</button>
+            <button class="numero arredondado" onClick="inputBtn('%');"  value="%">%</button><br>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
