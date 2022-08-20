@@ -1,5 +1,5 @@
 let nFinal1
-let nFinal2
+var nFinal2
 let btn
 let n1
 let n2
@@ -11,41 +11,24 @@ function inputBtn(value){
     
     /*btn é numero?*/
     if(typeof btn=='string'){   
-
+                opr=btn
             if(nFinal1==null){
                 console.log('digite  o primeiro Valor.  btn='+btn)
             }else{
-                opr=btn
-                console.log('digite outro número.' +opr)
-                //criando a segunda parcela da soma
-
-                n2=btn
-                console.log('n2 recebe btn. valor de n2 ='+n2)
-        
-                if(nFinal2==null){
-                    nFinal2=n2
-                    console.log('Valor de nFinal2='+nFinal2)
-                }else{
-                    //depois dos outros numeros antes de add a operação
-                    console.log('Valor atual de nFinal1='+nFinal2)
-                    n2Strg= n2.toString()
-                    nFinal2Strg=nFinal2.toString()
-                    n2=nFinal2Strg.concat(n2Strg)
-                    nFinal2=n2 
-                    console.log('Valor de nFinal2='+nFinal2)
-                    }
+                //chamando função para criar segundo numero da parcela
+                console.log('digite outro número para a operação')
+                input2()
                 }
     }else{
         //Concatenando a primeira parcela da soma
+        
         n1=btn
-        console.log('n1 recebe btn. valor de n1 ='+n1)
-
+        
         if(nFinal1==null){
             nFinal1=n1
             console.log('Valor de nFinal1='+nFinal1)
         }else{
-            //depois dos outros numeros antes de add a operação
-            console.log('Valor atual de nFinal1='+nFinal1)
+            //depois os outros numeros antes de add a operação
             n1Strg= n1.toString()
             nFinal1Strg=nFinal1.toString()
             n2=nFinal1Strg.concat(n1Strg)
@@ -54,6 +37,31 @@ function inputBtn(value){
             }
         }
 }   
+
+function input2(value,nFinal1){
+    btn=value
+    console.log('valor recebido da function anterior value='+btn)
+    nFinal2=0
+    console.log('nFinal2 recebe btn. valor de nFinal2 ='+nFinal2)
+    if(typeof btn=='string'){}
+     
+    
+    /*
+    if(nFinal1==null){
+        nFinal1=n1
+        console.log('Valor de nFinal1='+nFinal1)
+    }else{
+        //depois dos outros numeros antes de add a operação
+        console.log('Valor atual de nFinal1='+nFinal1)
+        n1Strg= n1.toString()
+        nFinal1Strg=nFinal1.toString()
+        n2=nFinal1Strg.concat(n1Strg)
+        nFinal1=n2 
+        console.log('Valor de nFinal1='+nFinal1)
+        }*/
+    
+}
+
      
  
  
