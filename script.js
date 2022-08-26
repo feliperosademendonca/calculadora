@@ -1,98 +1,86 @@
-let nFinal1
-var nFinal2
-let btn
-let n1
-let n2
-let result
+let nFinal1;
+var nFinal2;
+let btn;
+let n1;
+let n2;
+let result;
+let opr;
 
-function inputBtn(value){
-    
-    btn=value
-    
-    /*btn é numero?*/
-    if(typeof btn=='string'){   
-                opr=btn
-            if(nFinal1==null){
-                console.log('digite  o primeiro Valor.  btn='+btn)
-            }else{
-                //chamando função para criar segundo numero da parcela
-                console.log('digite outro número para a operação')
-                input2()
-                }
-    }else{
-        //Concatenando a primeira parcela da soma
-        
-        n1=btn
-        
-        if(nFinal1==null){
-            nFinal1=n1
-            console.log('Valor de nFinal1='+nFinal1)
-        }else{
-            //depois os outros numeros antes de add a operação
-            n1Strg= n1.toString()
-            nFinal1Strg=nFinal1.toString()
-            n2=nFinal1Strg.concat(n1Strg)
-            nFinal1=n2 
-            console.log('Valor de nFinal1='+nFinal1)
+function calc(value){  
+ 
+if (result==null){ 
+    if (opr==null){ 
+        if (nFinal2==null) { 
+            if(nFinal1==null){ 
+                if (typeof value=='string'){
+                    document.getElementById("msg").innerHTML = 'informe primeiro um número';
+                    document.getElementById("txtOpr").innerHTML = oprTemp;
+                    
+                    
+                }else{
+                nFinal1=value;
+                document.getElementById("txtn1").innerHTML = nFinal1;
+                console.log(nFinal1)
             }
-        }
-}   
+            }else if(typeof value == 'number'){
+                n1=value;
+                let n1Str=n1.toString();
+                let nFinal1Str=nFinal1.toString();
+                nFinal1=nFinal1Str.concat(n1Str);
+                document.getElementById("txtn1").innerHTML = nFinal1;
+                console.log(nFinal1);
 
-function input2(value,nFinal1){
-    btn=value
-    console.log('valor recebido da function anterior value='+btn)
-    nFinal2=0
-    console.log('nFinal2 recebe btn. valor de nFinal2 ='+nFinal2)
-    if(typeof btn=='string'){}
-     
-    
-    /*
-    if(nFinal1==null){
-        nFinal1=n1
-        console.log('Valor de nFinal1='+nFinal1)
+            }else{
+                let oprTemp=value;
+                nFinal2=0;
+                document.getElementById("txtOpr").innerHTML = oprTemp;
+                document.getElementById("txtn2").innerHTML = nFinal2;
+                console.log('nFinal1'+nFinal1)
+                console.log('nFinal2'+nFinal2)
+                
+            }
+
+        }else if (typeof value ===String){
+            opr=value
+            console.log('Digite o segundo número da operação')
+            document.getElementById("txtn2").innerHTML = nFinal2;
+            document.getElementById("txtOpr").innerHTML = opr;
+            console.log(nFinal1+opr+nFinal2)
+
+        }else{
+            n2=value;
+            let n2Str=n2.toString();
+            let nFinal2Str=nFinal2.toString();
+            nFinal2=nFinal2Str.concat(n2Str);
+            console.log(nFinal1+opr+nFinal2);
+            document.getElementById("txtn2").innerHTML = nFinal2;
+
+        }
     }else{
-        //depois dos outros numeros antes de add a operação
-        console.log('Valor atual de nFinal1='+nFinal1)
-        n1Strg= n1.toString()
-        nFinal1Strg=nFinal1.toString()
-        n2=nFinal1Strg.concat(n1Strg)
-        nFinal1=n2 
-        console.log('Valor de nFinal1='+nFinal1)
-        }*/
-    
+        //operação(nFinal1,nFinal2,opr)
+        console.log('chamar function operação()')
+        console.log(nFinal1+nFinal2)
+    }
+}else{
+    nFinal1=result;
+    nFinal2=value;
+    result=null
+}
 }
 
-     
- 
- 
-
-/*Operações
-    function sum(n1,n2){
-        let result= n1+n2
-        console.log(result)
-        }sum(n1,nfinal)
-
-    function sub(n1,n2){
-        let result = n1-n2
-        console.log(result)
-        }sub(n1,nfinal)
-
-    function mult(n1,n2){
-        let result = n1*n2
-        console.log(result)
-        }mult(n1,nfinal)
-
-    function div(n1,n2){
-        let result= n1/n2
-        console.log(result)
-        }div(n1,nfinal)
-
-    function perc(n1,n2){
-        var result =(n1*n2)/100;
-        console.log(result)
-        }perc(n1,nfinal)
-        
-    function iterar(n1,result){
-        let newResult= (n1*result)/100;
-        console.log(newResult)
-        }perc(n1,nfinal)*/
+function operação(nFinal1,nFinal2,opr){
+    n1=nFinal1;
+    n2=nFinal2;
+    let result;
+    if (opr=='+') { result=n1+n2} 
+    else if(opr=='-'){result=n1-n2}
+    else if(opr=='*'){result=n1*n2}
+    else if (opr=='/'){result=n1/n2}
+    else{
+        if(n1==n2){console.log('Verdadeiro! '+n1+' é igual a '+n2)}
+        else{console.log('Falso! '+n1+' não é igual a '+n2)}
+    }
+opr=null
+document.getElementById("txResult").innerHTML = result;
+return (result)
+}

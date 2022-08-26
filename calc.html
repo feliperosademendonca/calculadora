@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
   <link rel="stylesheet" href="./estilo.css">
+
+
  
   <script src="./script.js"></script>
   
@@ -14,35 +16,35 @@
 </head>
 <body>
   <div id="calculadora">
-    <div id="tela" class=" arredondado">
-      <p id="msg">Vamos Calcular?</p>
-      <p id="operando">Digite um número</p>
-      <p id="operação">Digite outro númeromero</p>
-      <p id="operador"></p>
-      <p id="resultado"></p>
+    <div id="tela" class="arredondado tela">
+      <p id="msg">Mensagem</p>
+      <p id="txtn1">Digite um número</p>
+      <p id="txtOpr">Operação</p>
+      <p id="txtn2">Digite outro número</p>
+      <p id="=txtResult">Total</p>
     </div>
     
     <div id="teclado">
         <div class="botao">
-            <button class="numero arredondado" onClick="inputBtn(7);"  value="7">7</button>
-            <button class="numero arredondado" onClick="inputBtn(8);"  value="8">8</button>
-            <button class="numero arredondado" onClick="inputBtn(9);"  value="9">9</button>
-            <button class="numero arredondado" onClick="inputBtn('+');"  value="+">+</button><br>
+            <button class="numero arredondado" onClick="calc(7);"  value="7">7</button>
+            <button class="numero arredondado" onClick="calc(8);"  value="8">8</button>
+            <button class="numero arredondado" onClick="calc(9);"  value="9">9</button>
+            <button class="numero arredondado" onClick="calc('/');"  value="/">/</button><br>
 
-            <button class="numero arredondado" onClick="inputBtn(4);"  value="4">4</button>
-            <button class="numero arredondado" onClick="inputBtn(5);"  value="5">5</button>
-            <button class="numero arredondado" onClick="inputBtn(6);"  value="6">6</button>
-            <button class="numero arredondado" onClick="inputBtn('-');"  value="-">-</button><br>
+            <button class="numero arredondado" onClick="calc(4);"  value="4">4</button>
+            <button class="numero arredondado" onClick="calc(5);"  value="5">5</button>
+            <button class="numero arredondado" onClick="calc(6);"  value="6">6</button>
+            <button class="numero arredondado" onClick="calc('*');"  value="*">*</button><br>
 
-            <button class="numero arredondado" onClick="inputBtn(1);"  value="1">1</button>
-            <button class="numero arredondado" onClick="inputBtn(2);"  value="2">2</button>
-            <button class="numero arredondado" onClick="inputBtn(3);"  value="3">3</button>
-            <button class="numero arredondado" onClick="inputBtn('/');"  value="/">/</button><br>
+            <button class="numero arredondado" onClick="calc(1);"  value="1">1</button>
+            <button class="numero arredondado" onClick="calc(2);"  value="2">2</button>
+            <button class="numero arredondado" onClick="calc(3);"  value="3">3</button>
+            <button class="numero arredondado" onClick="calc('-');"  value="-">-</button><br>
 
-            <button class="numero arredondado" onClick="inputBtn('resst');" value="rst">reset</button>
-            <button class="numero arredondado" onClick="inputBtn(0);"  value="0">0</button>
-            <button class="numero arredondado" onClick="inputBtn('delete');" value="del">del</button>
-            <button class="numero arredondado" onClick="inputBtn('%');"  value="%">%</button><br>
+            <button class="numero arredondado" onClick="calc(0);"  value="0">0</button>
+            <button class="numero arredondado" onClick="calc('del');" value="del">del</button>
+            <button class="numero arredondado" onClick="calc('=');" value="=">=</button>
+            <button class="numero arredondado" onClick="calc('+');"  value="+">+</button><br>
         </div>
     </div>
   </div>
