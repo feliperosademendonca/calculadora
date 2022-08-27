@@ -15,38 +15,45 @@
 
 </head>
 <body>
-  <div id="calculadora">
+  <div id="calculadora" class="arredondado">
     <div id="tela" class="arredondado tela">
-      <p id="msg">Mensagem</p>
-      <p id="txtn1">Digite um número</p>
-      <p id="txtOpr">Operação</p>
-      <p id="txtn2">Digite outro número</p>
-      <p id="=txtResult">Total</p>
+      <p id="msg">Operação Somar </p>
+      <span id="txtn1">789</span>
+      <span id="txtOpr">+</span>
+      <span id="txtn2">456=</span>
+      <p id="=txtResult" class="resultado">1145</p>
     </div>
     
-    <div id="teclado">
+    <div id="teclado" class="grid-container">
         <div class="botao">
-            <button class="numero arredondado" onClick="calc(7);"  value="7">7</button>
-            <button class="numero arredondado" onClick="calc(8);"  value="8">8</button>
-            <button class="numero arredondado" onClick="calc(9);"  value="9">9</button>
-            <button class="numero arredondado" onClick="calc('/');"  value="/">/</button><br>
+            <button class="btn arredondado ac" onClick="calc('ac');"  value="ac">AC</button>
+            <button class="btn arredondado" onClick="calc('del');"  value="del">DEL</button>
+            <button class="btn arredondado operador dividir" onClick="calc('/');"  value="/">÷</button><br>
+            
+            <button class="btn arredondado" onClick="calc(7);"  value="7">7</button>
+            <button class="btn arredondado" onClick="calc(8);"  value="8">8</button>
+            <button class="btn arredondado" onClick="calc(9);"  value="9">9</button>
+            <button class="btn arredondado operador multiplicar" onClick="calc('*');"  value="*">x</button><br>
 
-            <button class="numero arredondado" onClick="calc(4);"  value="4">4</button>
-            <button class="numero arredondado" onClick="calc(5);"  value="5">5</button>
-            <button class="numero arredondado" onClick="calc(6);"  value="6">6</button>
-            <button class="numero arredondado" onClick="calc('*');"  value="*">*</button><br>
+            <button class="btn arredondado" onClick="calc(4);"  value="4">4</button>
+            <button class="btn arredondado" onClick="calc(5);"  value="5">5</button>
+            <button class="btn arredondado" onClick="calc(6);"  value="6">6</button>
+            <button class="btn arredondado operador diminuir" onClick="calc('-');"  value="-">-</button><br>
 
-            <button class="numero arredondado" onClick="calc(1);"  value="1">1</button>
-            <button class="numero arredondado" onClick="calc(2);"  value="2">2</button>
-            <button class="numero arredondado" onClick="calc(3);"  value="3">3</button>
-            <button class="numero arredondado" onClick="calc('-');"  value="-">-</button><br>
+            <button class="btn arredondado" onClick="calc(1);"  value="1">1</button>
+            <button class="btn arredondado" onClick="calc(2);"  value="2">2</button>
+            <button class="btn arredondado" onClick="calc(3);"  value="3">3</button>
+            <button class="btn arredondado operador somar" onClick="calc('+');"  value="+">+</button><br>
 
-            <button class="numero arredondado" onClick="calc(0);"  value="0">0</button>
-            <button class="numero arredondado" onClick="calc('del');" value="del">del</button>
-            <button class="numero arredondado" onClick="calc('=');" value="=">=</button>
-            <button class="numero arredondado" onClick="calc('+');"  value="+">+</button><br>
+            <button class="btn arredondado ponto" onClick="calc('.');"  value=".">.</button>
+            <button class="btn arredondado " onClick="calc('0');" value="0">0</button>
+            <button class="btn arredondado igual" onClick="calc('=');"  value="=">=</button><br>
         </div>
+        <div id="autor" class="arredondado">
+          <p class=" "><i>feita por</i></p>
+          <p class=" "><br>FELIPE ROSA</p>
+      </div>
     </div>
-  </div>
+  
 </body>
 </html>
