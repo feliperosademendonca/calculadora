@@ -40,7 +40,7 @@ if (result==null){
                 
             }
 
-        }else if (typeof value ===String){
+        }else if (typeof value == 'string'){
             opr=value
             console.log('Digite o segundo número da operação')
             document.getElementById("txtn2").innerHTML = nFinal2;
@@ -57,7 +57,7 @@ if (result==null){
 
         }
     }else{
-        //operação(nFinal1,nFinal2,opr)
+        operação(nFinal1,nFinal2,opr)
         console.log('chamar function operação()')
         console.log(nFinal1+nFinal2)
     }
