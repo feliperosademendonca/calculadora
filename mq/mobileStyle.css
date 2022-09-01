@@ -1,0 +1,8 @@
+/*tela menores que 380px*/
+@media (min-width: 380px)
+{
+
+body{
+    background-color:black ;
+   }
+}
