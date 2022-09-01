@@ -1,86 +1,169 @@
 let nFinal1;
-var nFinal2;
+let nFinal2;
 let btn;
 let n1;
 let n2;
 let result;
 let opr;
+let oprTemp;
+ 
 
 function calc(value){  
- 
-if (result==null){ 
-    if (opr==null){ 
-        if (nFinal2==null) { 
-            if(nFinal1==null){ 
-                if (typeof value=='string'){
-                    document.getElementById("msg").innerHTML = 'informe primeiro um número';
-                    document.getElementById("txtOpr").innerHTML = oprTemp;
-                    
-                    
-                }else{
-                nFinal1=value;
-                document.getElementById("txtn1").innerHTML = nFinal1;
-                console.log(nFinal1)
-            }
-            }else if(typeof value == 'number'){
-                n1=value;
-                let n1Str=n1.toString();
-                let nFinal1Str=nFinal1.toString();
-                nFinal1=nFinal1Str.concat(n1Str);
-                document.getElementById("txtn1").innerHTML = nFinal1;
-                console.log(nFinal1);
+    document.getElementById("msg").innerHTML = '';//reset msg
 
-            }else{
-                let oprTemp=value;
+if(value=='ac'){ //redefine
+    
+    nFinal1=null;
+    nFinal2=null;
+    opr=null;
+    result=null;
+    console.clear() //limpa o console
+    console.log('chamou ac')
+    console.log('valor nFinal1 '+ nFinal1+', valor opr' +opr+ ', valor nFinal2 '+ nFinal2);
+    document.getElementById("txtn1").innerHTML = '';
+    document.getElementById("txtOpr").innerHTML = '';
+    document.getElementById("txtn2").innerHTML =  '';
+    document.getElementById("txtResultado").innerHTML = '';
+
+}else if (value=='del') { //deleta
+    console.clear() //limpa o console
+    console.log('apertou o delete')
+    document.getElementById("msg").innerHTML = 'apertou o delete';
+
+
+}else{ //calcular
+
+if (value!='='){//chk se result é vazio
+        if (nFinal2==null) { //chk se n2 é vazio
+            if(nFinal1==null){ ////chk se n1 é vazio
+                if (typeof value=='string'){//msg para definir numero primeiro
+                    document.getElementById("txtOpr").innerHTML = 'informe primeiro um número';
+                    console.clear() //limpa o console
+                    console.log('Informer Primeiro Número')
+                    
+                }else{ // atribue value a nFinal1 
+                    nFinal1=value;
+                    document.getElementById("msg").innerHTML = '';//deletou mensagens 
+                    document.getElementById("txtn1").innerHTML = nFinal1;
+                    console.log('nFinal1 ='+nFinal1)
+                }   
+            }else if(typeof value == 'number'){//concatena n1+value
+                document.getElementById('txtn1').innerHTML=nFinal1=concatNumber(value,nFinal1);
+                console.log('nFinal1 ='+nFinal1)
+
+            }else{//começa a dar o resultado previo
+                oprTemp=value;
                 nFinal2=0;
+                document.getElementById("txtn1").innerHTML = nFinal1;
                 document.getElementById("txtOpr").innerHTML = oprTemp;
                 document.getElementById("txtn2").innerHTML = nFinal2;
-                console.log('nFinal1'+nFinal1)
-                console.log('nFinal2'+nFinal2)
+                document.getElementById("txtResultado").innerHTML = operação(nFinal1,oprTemp,nFinal2);//valor parcial
+                console.log('nFinal1= '+nFinal1+', oprTemp= '+oprTemp+', nFinal2 ='+nFinal2+', resultTemp= '+resultTemp)//retorna valor parcial da operação      
                 
             }
+        }else if (nFinal2==0 && typeof value== 'number' ) {//Atribui value a nFinal2
 
-        }else if (typeof value == 'string'){
-            opr=value
-            console.log('Digite o segundo número da operação')
+            nFinal2=value
+            document.getElementById("txtn1").innerHTML = nFinal1;
+            document.getElementById("txtOpr").innerHTML = oprTemp;
             document.getElementById("txtn2").innerHTML = nFinal2;
-            document.getElementById("txtOpr").innerHTML = opr;
-            console.log(nFinal1+opr+nFinal2)
+            document.getElementById("txtResultado").innerHTML = operação(nFinal1,oprTemp,nFinal2);//valor parcial
+            console.log('nFinal1= '+nFinal1+', oprTemp= '+oprTemp+', nFinal2 ='+nFinal2+', resultTemp= '+resultTemp)
 
-        }else{
-            n2=value;
-            let n2Str=n2.toString();
-            let nFinal2Str=nFinal2.toString();
-            nFinal2=nFinal2Str.concat(n2Str);
-            console.log(nFinal1+opr+nFinal2);
-            document.getElementById("txtn2").innerHTML = nFinal2;
+        }else if (typeof value == 'number'){// concatena nFinal2 e da o resultado previo
 
+            document.getElementById("txtn1").innerHTML = nFinal1;
+            document.getElementById("txtOpr").innerHTML = oprTemp;
+            document.getElementById('txtn2').innerHTML = nFinal2=concatNumber(value,nFinal2);
+            document.getElementById("txtResultado").innerHTML = operação(nFinal1,oprTemp,nFinal2);//resultado parcial            
+            console.log('nFinal1= '+nFinal1+', oprTemp= '+oprTemp+', nFinal2 ='+nFinal2+', resultTemp= '+resultTemp)
+
+
+        }else{//'criando "n" parcelas para operação'
+            oprTemp=value
+            nFinal1=resultTemp
+            nFinal2=0
+            document.getElementById("txtn1").innerHTML = resultTemp;
+            document.getElementById("txtOpr").innerHTML = oprTemp;
+            document.getElementById("txtn2").innerHTML = '';
+            document.getElementById("txtResultado").innerHTML = operação(nFinal1,oprTemp,nFinal2);//valor parcial de 'n' parcelas
+            console.log('criando "n" parcelas para operação')
+            console.log('nFinal1= '+nFinal1+', oprTemp= '+oprTemp+', nFinal2 ='+nFinal2+', resultTemp= '+resultTemp)
         }
-    }else{
-        operação(nFinal1,nFinal2,opr)
-        console.log('chamar function operação()')
-        console.log(nFinal1+nFinal2)
-    }
+
 }else{
-    nFinal1=result;
-    nFinal2=value;
-    result=null
+    document.getElementById("msg").innerHTML = 'Valor Final';
+    document.getElementById("txtn1").innerHTML = '';
+    document.getElementById("txtOpr").innerHTML = '';
+    document.getElementById("txtn2").innerHTML = '';
+    document.getElementById("txtResultado").innerHTML = resultTemp;
+    console.log('nFinal1= '+nFinal1+', oprTemp= '+oprTemp+', nFinal2 ='+nFinal2+', resultTemp= '+resultTemp)
+    console.log('exibir só o valor do resultado e finalizar a operação');
+
+}
 }
 }
 
-function operação(nFinal1,nFinal2,opr){
-    n1=nFinal1;
-    n2=nFinal2;
-    let result;
-    if (opr=='+') { result=n1+n2} 
-    else if(opr=='-'){result=n1-n2}
-    else if(opr=='*'){result=n1*n2}
-    else if (opr=='/'){result=n1/n2}
+function operação(nFinal1,opr,nFinal2){
+    console.log('valores recebidos nFinal1= '+ nFinal1+', opr= ' +opr+ ', nFinal2= '+ nFinal2);
+
+    n1=parseFloat(nFinal1);
+    n2=parseFloat(nFinal2);
+    oprValue=opr;
+    result=null;
+    resultTemp=result
+
+    if (oprValue=='+') { 
+        result=n1+n2; console.log(n1+opr+n2+'='+result)
+        document.getElementById("txtn1").innerHTML = n1;
+        document.getElementById("txtOpr").innerHTML = oprValue;
+        document.getElementById("txtn2").innerHTML = n2;
+        document.getElementById("txtResultado").innerHTML = result;
+        
+
+    } 
+    else if(oprValue=='-'){
+        result=n1-n2; console.log(n1+oprValue+n2+'='+result)
+        document.getElementById("txtn1").innerHTML = n1;
+        document.getElementById("txtOpr").innerHTML = oprValue;
+        document.getElementById("txtn2").innerHTML = n2;
+        document.getElementById("txtResultado").innerHTML = result;
+
+    } 
+    else if(oprValue=='x'){
+        result=n1*n2; console.log(n1+'x'+n2+'='+result)
+        document.getElementById("txtn1").innerHTML = n1;
+        document.getElementById("txtOpr").innerHTML = oprValue;
+        document.getElementById("txtn2").innerHTML = n2;
+        document.getElementById("txtResultado").innerHTML = result;
+
+    } 
+    else if (oprValue=='÷'){
+        result=n1/n2; console.log(n1+oprValue+n2+'='+result)
+        document.getElementById("txtn1").innerHTML = n1;
+        document.getElementById("txtOpr").innerHTML = oprValue;
+        document.getElementById("txtn2").innerHTML = n2;
+        document.getElementById("txtResultado").innerHTML = result;
+
+    }
     else{
         if(n1==n2){console.log('Verdadeiro! '+n1+' é igual a '+n2)}
         else{console.log('Falso! '+n1+' não é igual a '+n2)}
     }
-opr=null
-document.getElementById("txResult").innerHTML = result;
-return (result)
+console.log('resultado = '+result)
+
+resultTemp=result
+
+return(resultTemp)
+
+}
+
+function concatNumber(value,nFinalTemp){//cria os números 
+    let n=value;
+    let nFinal=nFinalTemp
+    let n1Str=n.toString();
+    let nFinal1Str=nFinal.toString();
+    nFinal=nFinal1Str.concat(n1Str);
+    console.log('retornar nFinalTemp ='+nFinal)
+    return(nFinal)
 }
