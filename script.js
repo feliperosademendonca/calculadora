@@ -1,8 +1,6 @@
 let nFinal1;
 let nFinal2;
-let btn;
 let n1;
-let n2;
 let result;
 let opr;
 let oprTemp;
@@ -40,7 +38,7 @@ if (value!='='){//chk se result é vazio
                     document.getElementById("txtOpr").innerHTML = 'informe primeiro um número';
                     console.clear() //limpa o console
                     console.log('Informer Primeiro Número')
-                    
+
                 }else{ // atribue value a nFinal1 
                     nFinal1=value;
                     document.getElementById("msg").innerHTML = '';//deletou mensagens 
