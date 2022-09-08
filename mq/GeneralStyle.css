@@ -1,24 +1,23 @@
-/* *{
-  box-sizing:border-box;
-  margin: 0px;
-  padding: 0px;
- }
-html{
-  background:url(../img/flat-lay-desk-arrangement-with-copy-space.jpg);
+ 
+@media screen and (min-width: 551px) and (max-width: 1280px)   and (orientation: portrait) {
+ 
+
+  html{
+  background:url(../img/bgdesktop.jpg);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: left ;
+  background-size: cover;
   }
  
 #calculadora{
   background:linear-gradient(to right,rgb(51, 51, 51),darkgrey);
+  height: 90vh;
+  width: 80vw;
   border: 1px solid rgba(158, 158, 158, 0.274);
-  height: 500px;
-  width: 300px;
-  margin: auto;
-  margin-top: 30px;
   box-shadow:  -5px 5px 10px .5px rgba(0, 0, 0, 0.575);
+ 
 }
-
+ 
 #tela{
   text-align: center;
   height: 90px;
@@ -28,12 +27,10 @@ html{
   margin-top: 15px;
   margin-bottom: 15px;
   box-shadow:inset 1px 1px 2px rgb(0, 60, 0) ;
-  font-family:  "SILKSCREEN";
-
-    
+  font-family:  "SILKSCREEN";  
 }
 
-.msg{
+/*.msg{
   margin-top: 15px;
 }
 .txtn1,.txtOpr,.txtn2{
@@ -69,10 +66,6 @@ html{
   background-color: #189b68;
   color: aliceblue;
 }
-
-
-
- 
 button:active{
   background-color: white;
   transition: 0.2s;
@@ -80,7 +73,7 @@ button:active{
 }
 
 
-
+ 
 .arredondado{
   border-radius: 10px;
 }
@@ -125,3 +118,4 @@ button:active{
  }
 
 */
+}
