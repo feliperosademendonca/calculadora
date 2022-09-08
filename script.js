@@ -16,7 +16,7 @@ if(value=='ac'){ //redefine
     opr=null;
     result=null;
     console.clear() //limpa o console
-    console.log('chamou ac')
+    console.log('chamou AC')
     console.log('valor nFinal1 '+ nFinal1+', valor opr' +opr+ ', valor nFinal2 '+ nFinal2);
     document.getElementById("txtn1").innerHTML = '';
     document.getElementById("txtOpr").innerHTML = '';
@@ -24,11 +24,9 @@ if(value=='ac'){ //redefine
     document.getElementById("txtResultado").innerHTML = '';
 
 }else if (value=='del') { //deleta
-    console.clear() //limpa o console
-    console.log('apertou o delete')
-    document.getElementById("msg").innerHTML = 'apertou o delete';
-
-
+    nFinal1=Del(nFinal1,opr,nFinal2)
+    console.log("Valor de nFinal1= " +nFinal1)
+    
 }else{ //calcular
 
 if (value!='='){//chk se result é vazio
@@ -98,9 +96,7 @@ if (value!='='){//chk se result é vazio
     console.log('nFinal1= '+nFinal1+', oprTemp= '+oprTemp+', nFinal2 ='+nFinal2+', resultTemp= '+resultTemp)
     console.log('exibir só o valor do resultado e finalizar a operação');
 
-}
-}
-}
+}}}
 
 function operação(nFinal1,opr,nFinal2){
     console.log('valores recebidos nFinal1= '+ nFinal1+', opr= ' +opr+ ', nFinal2= '+ nFinal2);
@@ -164,4 +160,42 @@ function concatNumber(value,nFinalTemp){//cria os números
     nFinal=nFinal1Str.concat(n1Str);
     console.log('retornar nFinalTemp ='+nFinal)
     return(nFinal)
+}
+
+function Del(nFinal1,opr,nFinal2){
+    n1=null
+    n2=null
+    oprTemp=null
+    n1=nFinal1
+    n2=nFinal2
+    oprTemp=opr
+
+    if(oprTemp==null){
+        nFinal1=null;
+        nFinal2=null;
+        opr=null;
+        result=null;
+        console.clear() //limpa o console
+        console.log('DEL chamou AC')
+        console.log('valor nFinal1 '+ nFinal1+', valor opr' +opr+ ', valor nFinal2 '+ nFinal2);
+        document.getElementById("txtn1").innerHTML = '';
+        document.getElementById("txtOpr").innerHTML = '';
+        document.getElementById("txtn2").innerHTML =  '';
+        document.getElementById("txtResultado").innerHTML = '';
+
+    }else{
+    let nDel=n2.toString()
+    let nFinalDel = nDel.substring(0, nDel.length - 1);
+    console.log('valor de nFinalDel'+nFinalDel);
+    console.log('valor de nFinal1'+n1);
+    console.log('valor de nFinal1'+oprTemp);
+    console.log('valor de nFinal1'+n2);
+    console.log('deletou o ultimo numero');
+    document.getElementById("txtn1").innerHTML = nFinalDel;
+    document.getElementById("txtOpr").innerHTML = '';
+    document.getElementById("txtn2").innerHTML = nFinal1;
+    document.getElementById("txtResultado").innerHTML = '';
+    }
+
+return(n1)
 }

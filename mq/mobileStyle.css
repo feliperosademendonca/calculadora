@@ -1,5 +1,12 @@
 @media screen and (min-width: 350px) and (max-width: 550px) and (orientation: portrait) {
-    @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');  
+     @font-face {
+        font-family: 'silk';
+        src: url(../fonts/Silkscreen-Regular.ttf) format('truetype');
+      }
+      @font-face {
+        font-family: 'digi';
+        src: url(../fonts/DS-DIGIB.TTF) format('truetype');
+      }
     *{
         padding:0px;
         margin: 0px;
@@ -20,7 +27,7 @@
         top:5vh;
         padding: 0px;
         box-shadow:inset 1px 1px 2px rgb(0, 46, 0) ;
-        font-family: 'Silkscreen', cursive;
+        font-family: 'digi', cursive;
     }
     #msg{
         margin-top: 0px;
@@ -106,8 +113,16 @@
 
 }
 
-@media screen and (min-width: 550px)   and (orientation: landscape) {
-    @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');     
+@media screen  and (max-width: 720px) and (max-width: 1280px) and (orientation: landscape) {
+    @font-face {
+        font-family: 'silk';
+        src: url(../fonts/Silkscreen-Regular.ttf) format('truetype');
+      }
+      @font-face {
+        font-family: 'digi';
+        src: url(../fonts/DS-DIGIB.TTF) format('truetype');
+    }
+      
     *{
         padding:0px;
         margin: 0px;
@@ -128,7 +143,7 @@
         top:5vh;
         padding: 0px;
         box-shadow:inset 1px 1px 2px rgb(0, 46, 0) ;
-        font-family: 'Silkscreen', cursive;
+        font-family: 'digi', cursive;
     }
     #msg{
         margin-top: 0px;
