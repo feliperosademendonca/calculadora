@@ -1,8 +1,110 @@
-/*tela menores que 380px*/
-@media (min-width: 380px)
-{
-
-body{
-    background-color:black ;
-   }
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+@font-face {
+  font-family:"G7"; ;
+  src: url("/fonts/G7_Cube_5.ttf") format("ttf");
 }
+*{
+    padding:0px;
+    margin: 0px;
+}
+ #calculadora{
+    background:linear-gradient(to right,rgb(51, 51, 51),darkgrey);
+    height: 100vh;
+    width: 100vw;
+    min-width: 350px;
+ } 
+.tela{
+    position: relative;
+    text-align: center;
+    height: 10vh;
+    width:65vw;
+    background-color:rgb(97, 124, 78);
+    margin:auto;
+    top:5vh;
+    padding: 0px;
+    box-shadow:inset 1px 1px 2px rgb(0, 60, 0) ;
+    font-family:  "SILKSCREEN";   
+}
+#msg{
+    margin-top: 0px;
+    padding: 0px;
+    font-size: 3vw;
+}
+#txtn1,#txtOpr,#txtn2{
+    text-align: center;
+    color: rgb(12, 61, 12);
+    font-size: 3.5vw;
+}
+.resultado{
+    font-size: 6vw;
+}
+.botao{
+    position: relative;
+    top:10vh;
+    
+}
+.btn{
+    font-size: 4vw;
+    cursor: pointer;
+    width: 15vw;
+    height: 10vh;
+    box-shadow:inset 0px 2px 2px rgba(0, 0, 0, 0.257) ;
+}
+.somar{
+    grid-row: span 2;
+    height: 21vh;
+}
+.ac{
+    grid-column: span 2;
+    width: 32vw;
+}
+.operador{
+    background-color: #189b68;
+    color: aliceblue;
+}
+button:active{
+    background-color: white;
+    transition: 0.5s;
+    margin: auto;
+}
+.arredondado{
+    border-radius: 10px;
+}
+.grid-container{
+    display:grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns:auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto ;
+    column-gap: 5px;
+    row-gap: 5px;  
+}
+#autor{
+    position: relative;
+    width: 65vw;
+    height: 7vh;
+    border: 1px solid rgba(199, 199, 199, 0.39);
+    background:linear-gradient(to right,rgb(131, 128, 128),darkgrey);
+    margin: auto;
+    top:20vh ;
+    text-align: center;
+    box-shadow: inset -1px 1px 2px .5px rgb(97, 97, 97);
+}
+#autor>p{
+    margin: auto;
+    padding: 0px;
+    margin: 5px 0px -15px 0px;
+    font-family: Helvetica, sans-serif;
+    font-size: 1em;
+    letter-spacing:.4em;
+    color:rgba(233, 233, 233, 0.89);
+    text-shadow:  .5px -1px rgb(49, 49, 49);
+    
+}
+#autor>p>i{
+    margin: 0px 0px 0px 0px;
+    font-size: .8em;
+    text-align: left;
+}
+  
+  

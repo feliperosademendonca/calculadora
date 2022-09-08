@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <link rel="stylesheet" media="(max-width: 380px)" href="./mq/mobileStyle.css" />
+  <link rel="stylesheet" media="(max-width: 650px)" href="./mq/mobileStyle.css"  >
   <link rel="stylesheet" href="./mq/GeneralStyle.css">
   <script src="./script.js"></script>
   
@@ -13,7 +13,7 @@
 
 </head>
 <body>
-  <div id="calculadora" class="arredondado">
+  <div id="calculadora" class="">
     <div id="tela" class="arredondado tela">
       <p id="msg"></p>
       <span id="txtn1"></span>
@@ -21,37 +21,36 @@
       <span id="txtn2"></span>
       <p id="txtResultado" class="resultado"></p>
     </div>
-    
-    <div id="teclado" class="botao">
-        <div id="botao"class="botao  grid-container" >
-            <button class="btn arredondado ac" onClick="calc('ac');"  value="ac">AC</button>
-            <button class="btn arredondado" onClick="calc('del');"  valu e="del">DEL</button>
-            <button class="btn arredondado operador dividir" onClick="calc('÷');"  value="÷">÷</button><br>
-            
-            <button class="btn arredondado" onClick="calc(7);"  value="7">7</button>
-            <button class="btn arredondado" onClick="calc(8);"  value="8">8</button>
-            <button class="btn arredondado" onClick="calc(9);"  value="9">9</button>
-            <button class="btn arredondado operador multiplicar" onClick="calc('x');"  value="x">x</button><br>
+    <div id="teclado" class="botao grid-container" >
+        <button class="btn arredondado ac" onClick="calc('ac');"  value="ac">AC</button>
+        <button class="btn arredondado" onClick="calc('del');"  valu e="del">DEL</button>
+        <button class="btn arredondado operador dividir" onClick="calc('÷');"  value="÷">÷</button><br>
+        
+        <button class="btn arredondado" onClick="calc(7);"  value="7">7</button>
+        <button class="btn arredondado" onClick="calc(8);"  value="8">8</button>
+        <button class="btn arredondado" onClick="calc(9);"  value="9">9</button>
+        <button class="btn arredondado operador multiplicar" onClick="calc('x');"  value="x">x</button><br>
 
-            <button class="btn arredondado" onClick="calc(4);"  value="4">4</button>
-            <button class="btn arredondado" onClick="calc(5);"  value="5">5</button>
-            <button class="btn arredondado" onClick="calc(6);"  value="6">6</button>
-            <button class="btn arredondado operador diminuir" onClick="calc('-');"  value="-">-</button><br>
+        <button class="btn arredondado" onClick="calc(4);"  value="4">4</button>
+        <button class="btn arredondado" onClick="calc(5);"  value="5">5</button>
+        <button class="btn arredondado" onClick="calc(6);"  value="6">6</button>
+        <button class="btn arredondado operador diminuir" onClick="calc('-');"  value="-">-</button><br>
 
-            <button class="btn arredondado" onClick="calc(1);"  value="1">1</button>
-            <button class="btn arredondado" onClick="calc(2);"  value="2">2</button>
-            <button class="btn arredondado" onClick="calc(3);"  value="3">3</button>
-            <button class="btn arredondado operador somar" onClick="calc('+');"  value="+">+</button><br>
+        <button class="btn arredondado" onClick="calc(1);"  value="1">1</button>
+        <button class="btn arredondado" onClick="calc(2);"  value="2">2</button>
+        <button class="btn arredondado" onClick="calc(3);"  value="3">3</button>
+        <button class="btn arredondado operador somar" onClick="calc('+');"  value="+">+</button><br>
 
-            <button class="btn arredondado ponto" onClick="calc('.');"  value=".">.</button>
-            <button class="btn arredondado " onClick="calc(0);" value="0">0</button>
-            <button class="btn arredondado igual" onClick="calc('=');"  value="=">=</button><br>
-        </div>
-        <div id="autor" class="arredondado">
-          <p class=" "><i>feita por</i></p>
-          <p class=" "><br>FELIPE ROSA</p>
-      </div>
+        <button class="btn arredondado ponto" onClick="calc('.');"  value=".">.</button>
+        <button class="btn arredondado " onClick="calc(0);" value="0">0</button>
+        <button class="btn arredondado igual" onClick="calc('=');"  value="=">=</button><br>
     </div>
+    <div id="autor" class="arredondado">
+      <p ><i>feita por</i><br>
+       FELIPE ROSA</p>
+    </div>
+  </div>
+
   
 </body>
 </html>
